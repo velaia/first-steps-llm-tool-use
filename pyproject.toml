@@ -1,16 +1,16 @@
 [project]
-name = "llama3-groq-8b-tool-use"
+name = "first-steps-llm-tool-use"
 version = "0.1.0"
-description = "Add your description here"
+description = "Project to learn about LLM tool use + function calling"
 authors = [
-    { name = "Daniel N. Lang", email = "daniel.lang@velaia.de" }
+    { name = "Daniel N. Lang", email = "github+first-steps-llm-tool-use@tfc.ai" }
 ]
 dependencies = [
     "transformers>=4.44.0",
     "torch>=2.4.0",
 ]
 readme = "README.md"
-requires-python = ">= 3.10"
+requires-python = ">= 3.12"
 
 [build-system]
 requires = ["hatchling"]

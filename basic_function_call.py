@@ -46,7 +46,7 @@ Here are the available tools:
     }
 },
 {
-    "name": "count_characters",
+    "name": "count_characters0",
     "descriptin": "Count the number of characters of a given type within a word or phrase",
     "parameters": {
         "properties": {
@@ -70,6 +70,10 @@ pipe = pipeline("text-generation", model="Groq/Llama-3-Groq-8B-Tool-Use", device
 output = pipe(messages)
 command =  json.loads(output[0]['generated_text'][2]['content'])
 
-function_to_call = getattr(safe_tools, command['name'])
-result = function_to_call(command['arguments']['word_phrase'], 'n')
-print(f"{result = }")
+try:
+    function_to_call = getattr(safe_tools, command['name'])
+    result = function_to_call(command['arguments']['word_phrase'], 'n')
+    print(f"{result = }")
+except AttributeError:
+    print(f"Function {command['name']} is not among the available tools")
+    exit(1)

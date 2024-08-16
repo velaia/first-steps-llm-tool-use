@@ -1,0 +1,27 @@
+[project]
+name = "llama3-groq-8b-tool-use"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Daniel N. Lang", email = "daniel.lang@velaia.de" }
+]
+dependencies = [
+    "transformers>=4.44.0",
+    "torch>=2.4.0",
+]
+readme = "README.md"
+requires-python = ">= 3.10"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/llama3_groq_8b_tool_use"]
